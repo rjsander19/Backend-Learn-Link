@@ -24,9 +24,11 @@ const SubjectsSchema = new mongoose.Schema({
     name: String,
     image: String,
     description: String,
+    comments: String,
     });
       
 const Subjects = mongoose.model("Subjects", SubjectsSchema);
+
 
 //Middleware
 app.use(cors()); // to prevent cors errors, open access to all origins
