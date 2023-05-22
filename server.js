@@ -2,15 +2,10 @@
 require("dotenv").config();
 
 const { PORT = 4000, MONGODB_URL } = process.env;
-
 const express = require("express");
-
 const app = express();
-
 const mongoose = require("mongoose");
-
 const cors = require("cors");
-
 const morgan = require("morgan");
 
 //Mongoose
@@ -28,7 +23,7 @@ mongoose.connection
 const SubjectsSchema = new mongoose.Schema({
     name: String,
     image: String,
-    title: String,
+    description: String,
     });
       
 const Subjects = mongoose.model("Subjects", SubjectsSchema);
