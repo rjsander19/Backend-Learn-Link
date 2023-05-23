@@ -43,14 +43,16 @@ app.get("/", (req, res) => {
     res.send("hello world backend page subjects");
   });
   
-  //Index
-  app.get("/subjects", async (req, res) => {
-    try {
-      res.json(await Subjects.find({}));
-    } catch (error) {
-      res.status(400).json(error);
-    }
-  });
+// Index
+app.get("/subjects", async (req, res) => {
+  try {
+    const subjects = await Subjects.find({});
+    res.json(subjects);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Internal server error" });
+  }
+});
   
   // Create
   app.post("/subjects", async (req, res) => {
