@@ -47,6 +47,7 @@ app.get("/", (req, res) => {
 app.get("/subjects", async (req, res) => {
   try {
     const subjects = await Subjects.find({});
+    console.log(subjects);
     res.json(subjects);
   } catch (error) {
     console.error(error);
